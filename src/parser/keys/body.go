@@ -1,5 +1,3 @@
 package keys
 
-type Body interface{}
-
-type BodyImpl struct{}
+type Body struct{}

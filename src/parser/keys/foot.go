@@ -1,5 +1,3 @@
 package keys
 
-type Foot interface{}
-
-type FootImpl struct{}
+type Foot struct{}
