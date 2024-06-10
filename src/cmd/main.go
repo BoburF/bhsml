@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"os"
 
+	"ferxes.uz/bhsml/src/parser"
 	"ferxes.uz/bhsml/src/tokenizer"
 )
 
@@ -18,18 +18,7 @@ func main() {
 	defer file.Close()
 
 	tokenizer := tokenizer.NewTokenizer(file)
-
-	for {
-		ch, err := tokenizer.Next()
-
-		if err != nil {
-			if err == io.EOF {
-				break
-			}
-			fmt.Println("Error:", err)
-			break
-		}
-		fmt.Println(ch)
-		fmt.Printf("Character: %c\n", ch)
-	}
+    parser := parser.NewParser(*tokenizer)
+    parser.Parse()
+    fmt.Println(parser.Stack)
 }

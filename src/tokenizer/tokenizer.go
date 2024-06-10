@@ -7,13 +7,15 @@ import (
 
 type Tokenizer struct {
 	Tokenize *bufio.Reader
-	index    int
+	Index    int
+	Line     int
 }
 
 func NewTokenizer(reader io.Reader) *Tokenizer {
 	tokenizer := &Tokenizer{
 		Tokenize: bufio.NewReader(reader),
-		index:    0,
+		Index:    0,
+		Line:     1,
 	}
 
 	return tokenizer
@@ -33,8 +35,22 @@ func (tk *Tokenizer) Next() (byte, error) {
 	if err != nil {
 		return 0, err
 	}
+	if b == 10 {
+		tk.Line++
+	}
 
-	tk.index++
+	tk.Index++
 
 	return b, nil
+}
+
+func (tk *Tokenizer) PeekToNext() (byte, error) {
+	b, err := tk.Tokenize.ReadByte()
+	if err != nil {
+		return 0, err
+	}
+
+    tk.Tokenize.UnreadByte()
+
+    return b, nil
 }
