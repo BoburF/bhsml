@@ -11,10 +11,12 @@ type Tokenizer struct {
 }
 
 func NewTokenizer(reader io.Reader) *Tokenizer {
-	return &Tokenizer{
+	tokenizer := &Tokenizer{
 		Tokenize: bufio.NewReader(reader),
 		index:    0,
 	}
+
+	return tokenizer
 }
 
 func (tk *Tokenizer) Peek() (byte, error) {
