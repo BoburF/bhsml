@@ -23,7 +23,6 @@ func main() {
 	parser.Parse()
 	ast := astcontructor.NewASTConstructor(parser.Stack)
 	ast.Construct()
-	fmt.Println(parser.Stack)
 
 	json, err := ast.ToJSON()
 	if err != nil {

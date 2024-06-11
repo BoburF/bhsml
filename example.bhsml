@@ -2,10 +2,10 @@
 <body>
 Hello world!
 <p1 class="bobur">Bobur </p1>
-<div class"diver container">
+<div class="diver container">
     <div>
         <h3>Bobur's Hyper Structured Markup Language</h3>
-    </div>
 </div>
-</body>
-</bhsml>
+<p1>Bobur</p1>
+</div>
+<p1>Bobur endi chiqding</p1>

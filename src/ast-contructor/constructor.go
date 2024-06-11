@@ -18,7 +18,7 @@ func NewASTConstructor(tokens []parser.Tag) *ASTContructor {
 }
 
 func (ast *ASTContructor) Construct() {
-	ast.Tree = &Node{Type: "bhsml", Children: make([]*Node, 0)}
+	ast.Tree = &Node{Type: "Programm", Children: make([]*Node, 0)}
 	stack := []*Node{ast.Tree}
 
 	for _, token := range ast.Tokens {

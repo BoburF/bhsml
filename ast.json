@@ -1,5 +1,5 @@
 {
-  "type": "bhsml",
+  "type": "Programm",
   "attributes": null,
   "text": "",
   "children": [
@@ -37,7 +37,7 @@
             {
               "type": "tag",
               "attributes": {
-                "class\"diver": "",
+                "class": "\"diver",
                 "container\"": ""
               },
               "text": "div",
@@ -61,6 +61,32 @@
                       ]
                     }
                   ]
+                },
+                {
+                  "type": "tag",
+                  "attributes": null,
+                  "text": "p1",
+                  "children": [
+                    {
+                      "type": "text",
+                      "attributes": null,
+                      "text": "Bobur",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "tag",
+              "attributes": null,
+              "text": "p1",
+              "children": [
+                {
+                  "type": "text",
+                  "attributes": null,
+                  "text": "Bobur endi chiqding",
+                  "children": []
                 }
               ]
             }
