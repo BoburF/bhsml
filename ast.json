@@ -65,13 +65,26 @@
                 {
                   "type": "tag",
                   "attributes": null,
-                  "text": "p1",
+                  "text": "",
+                  "children": []
+                },
+                {
+                  "type": "tag",
+                  "attributes": null,
+                  "text": "",
                   "children": [
                     {
-                      "type": "text",
+                      "type": "tag",
                       "attributes": null,
-                      "text": "Bobur",
-                      "children": []
+                      "text": "p1",
+                      "children": [
+                        {
+                          "type": "text",
+                          "attributes": null,
+                          "text": "Bobur",
+                          "children": []
+                        }
+                      ]
                     }
                   ]
                 }

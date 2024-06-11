@@ -22,7 +22,7 @@ func (ast *ASTContructor) Construct() {
 	stack := []*Node{ast.Tree}
 
 	for _, token := range ast.Tokens {
-		if token.Name[0] == '/' {
+		if (token.Name != "" && token.Name[0] == '/') {
 			if len(stack) > 1 {
 				stack = stack[:len(stack)-1]
 			}
