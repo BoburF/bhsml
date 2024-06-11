@@ -1,0 +1,72 @@
+{
+  "type": "bhsml",
+  "attributes": null,
+  "text": "",
+  "children": [
+    {
+      "type": "tag",
+      "attributes": null,
+      "text": "bhsml",
+      "children": [
+        {
+          "type": "tag",
+          "attributes": null,
+          "text": "body",
+          "children": [
+            {
+              "type": "text",
+              "attributes": null,
+              "text": "Hello world!\n",
+              "children": []
+            },
+            {
+              "type": "tag",
+              "attributes": {
+                "class": "\"bobur\""
+              },
+              "text": "p1",
+              "children": [
+                {
+                  "type": "text",
+                  "attributes": null,
+                  "text": "Bobur ",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "tag",
+              "attributes": {
+                "class\"diver": "",
+                "container\"": ""
+              },
+              "text": "div",
+              "children": [
+                {
+                  "type": "tag",
+                  "attributes": null,
+                  "text": "div",
+                  "children": [
+                    {
+                      "type": "tag",
+                      "attributes": null,
+                      "text": "h3",
+                      "children": [
+                        {
+                          "type": "text",
+                          "attributes": null,
+                          "text": "Bobur's Hyper Structured Markup Language",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

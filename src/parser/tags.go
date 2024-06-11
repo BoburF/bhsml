@@ -11,5 +11,5 @@ type Tag struct{
     Type string
     Name string
     Atributes map[string]string
-    Chidlren []Tag
+    Children []Tag
 }
