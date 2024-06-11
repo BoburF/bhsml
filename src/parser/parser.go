@@ -3,7 +3,6 @@ package parser
 import (
 	"bytes"
 	"io"
-	"regexp"
 	"strings"
 
 	"ferxes.uz/bhsml/src/tokenizer"
@@ -28,7 +27,7 @@ func (p *Parser) Parse() {
 			return
 		}
 	}
-	if byte == 10 {
+	if byte == 10 || byte == 32 {
 		p.Tokenizer.Next()
 		p.Parse()
 		return
@@ -40,12 +39,12 @@ func (p *Parser) Parse() {
 		p.tempTag.Position.StartIndex = p.Tokenizer.Index
 		p.tempTag.Line = p.Tokenizer.Line
 
-        p.Tokenizer.Next()
+		p.Tokenizer.Next()
 		tag, err := p.readUntil('>')
 		if err != nil {
 			return
 		}
-        p.parseAtributes(tag)
+		p.parseAtributes(tag)
 
 		p.tempTag.Type = "tag"
 
@@ -54,8 +53,8 @@ func (p *Parser) Parse() {
 	case ">":
 		p.tempTag.Position.EndIndex = p.Tokenizer.Index
 		p.Stack = append(p.Stack, *p.tempTag)
-		
-        p.Tokenizer.Next()
+
+		p.Tokenizer.Next()
 		p.Parse()
 		break
 	default:
@@ -99,22 +98,23 @@ func (p *Parser) readUntil(delimiter byte) (string, error) {
 }
 
 func (p *Parser) parseAtributes(tag string) {
-    words := strings.Fields(tag)
+	words := strings.Fields(tag)
 
 	if len(words) > 0 {
 		p.tempTag.Name = words[0]
 	}
-    if len(words) <= 1 {
-        return
-    }
+	if len(words) <= 1 {
+		return
+	}
 
-	re := regexp.MustCompile(`(\w+)="([^"]*)"`)
-
-    p.tempTag.Atributes = make(map[string]string)
+	p.tempTag.Atributes = make(map[string]string)
 	for _, word := range words[1:] {
-		matches := re.FindStringSubmatch(word)
-		if len(matches) == 3 {
-			p.tempTag.Atributes[matches[1]] = matches[2]
+		parts := strings.SplitN(word, "=", 2)
+
+		if len(parts) >= 2 {
+			p.tempTag.Atributes[parts[0]] = parts[1]
+		} else {
+			p.tempTag.Atributes[parts[0]] = ""
 		}
 	}
 }
