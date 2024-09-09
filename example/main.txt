@@ -20,11 +20,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	defer func() {
-		if err := fo.Close(); err != nil {
-			panic(err)
-		}
-	}()
+    defer fo.Close()
 
 	err = basm.Assemble(file, fo)
 	fmt.Println("JSON data written to ast.json successfully")
