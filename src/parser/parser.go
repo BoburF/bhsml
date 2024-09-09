@@ -68,7 +68,7 @@ func (p *Parser) Parse() {
 		}
 
 		p.tempTag.Type = "text"
-		p.tempTag.Name = text
+		p.tempTag.Name = strings.TrimSpace(text)
 		p.tempTag.Position.EndIndex = p.Tokenizer.Index
 		p.Stack = append(p.Stack, *p.tempTag)
 

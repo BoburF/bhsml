@@ -1,14 +1,6 @@
 <bhsml>
-<body>
-Hello world!
-<p1 class="bobur">Bobur </p1>
-<div class="diver container">
-    <div>
-        <h3>Bobur's Hyper Structured Markup Language</h3>
-</div>
-<></>
-<>
-<p1>Bobur</p1>
-</>
-</div>
-<p1>Bobur endi chiqding</p1>
+    <h1>
+        Bobur Page
+        <a href="google.com"> link </a>
+    </h1>
+</bhsml>
