@@ -4,9 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	astcontructor "ferxes.uz/bhsml/src/ast-contructor"
-	"ferxes.uz/bhsml/src/parser"
-	"ferxes.uz/bhsml/src/tokenizer"
+	basm "ferxes.uz/bhsml/src/bhsml-asm"
 )
 
 func main() {
@@ -18,18 +16,6 @@ func main() {
 	}
 	defer file.Close()
 
-	tokenizer := tokenizer.NewTokenizer(file)
-	parser := parser.NewParser(*tokenizer)
-	parser.Parse()
-	ast := astcontructor.NewASTConstructor(parser.Stack)
-	ast.Construct()
-
-	json, err := ast.ToJSON()
-	if err != nil {
-		fmt.Println("Error parsing to json:", err)
-		return
-	}
-
 	fo, err := os.Create("ast.json")
 	if err != nil {
 		panic(err)
@@ -40,9 +26,6 @@ func main() {
 		}
 	}()
 
-	if _, err := fo.Write([]byte(json)); err != nil {
-		panic(err)
-	}
-
+	err = basm.Assemble(file, fo)
 	fmt.Println("JSON data written to ast.json successfully")
 }
