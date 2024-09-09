@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"ferxes.uz/bhsml/src/tokenizer"
+	"github.com/BoburF/bhsml/src/tokenizer"
 )
 
 type Parser struct {

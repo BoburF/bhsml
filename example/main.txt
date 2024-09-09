@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	basm "ferxes.uz/bhsml/src/bhsml-asm"
+	basm "github.com/BoburF/bhsml/src/bhsml-asm"
 )
 
 func main() {

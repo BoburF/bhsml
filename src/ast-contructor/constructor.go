@@ -3,7 +3,7 @@ package astcontructor
 import (
 	"encoding/json"
 
-	"ferxes.uz/bhsml/src/parser"
+	"github.com/BoburF/bhsml/src/parser"
 )
 
 type ASTContructor struct {

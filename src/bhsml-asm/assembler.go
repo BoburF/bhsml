@@ -3,9 +3,9 @@ package basm
 import (
 	"os"
 
-	astcontructor "ferxes.uz/bhsml/src/ast-contructor"
-	"ferxes.uz/bhsml/src/parser"
-	"ferxes.uz/bhsml/src/tokenizer"
+	astcontructor "github.com/BoburF/bhsml/src/ast-contructor"
+	"github.com/BoburF/bhsml/src/parser"
+	"github.com/BoburF/bhsml/src/tokenizer"
 )
 
 func Assemble(input *os.File, output *os.File) error {
